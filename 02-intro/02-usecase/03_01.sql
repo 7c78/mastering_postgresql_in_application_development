@@ -1,6 +1,5 @@
 \set start '2017-02-01'
 
-
 SELECT
   cast(calendar.entry AS date)                      AS date,
   coalesce(shares, 0)                               AS shares,
