@@ -5,8 +5,12 @@
 SELECT
   artist.name,
   count(*) AS albums
-FROM artist
-  LEFT JOIN album USING(artistid)
-GROUP BY artist.name
-ORDER BY albums DESC
+FROM
+  artist
+LEFT JOIN
+  album USING(artistid)
+GROUP BY
+  artist.name
+ORDER BY
+  albums DESC
 LIMIT :n;

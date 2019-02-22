@@ -1,18 +1,17 @@
 \set start '2017-02-01'
 
 SELECT
-  cast(calendar.entry AS date)                      AS date,
-  coalesce(shares, 0)                               AS shares,
-  coalesce(trades, 0)                               AS trades,
-   to_char(coalesce(dollars, 0), 'L99G999G999G999') AS dollars
-
+  CAST(calendar.entry AS date)                     AS date,
+  COALESCE(shares, 0)                              AS shares,
+  COALESCE(trades, 0)                              AS trades,
+  TO_CHAR(COALESCE(dollars, 0), 'L99G999G999G999') AS dollars
 FROM
-  generate_series(
+  GENERATE_SERIES(
     date :'start',
-    date :'start' + interval '1 month' - interval '1 day',
-    interval '1 day'
+    date :'start' + INTERVAL '1 month' - INTERVAL '1 day',
+    INTERVAL '1 day'
   ) AS calendar(entry)
-
-  LEFT JOIN factbook ON factbook.date = calendar.entry
-
-ORDER BY date;
+LEFT JOIN
+  factbook ON factbook.date = calendar.entry
+ORDER BY
+  date;

@@ -1,7 +1,10 @@
 SELECT
   name,
-  milliseconds * interval '1 ms' AS duration,
-  pg_size_pretty(bytes)          AS bytes
-FROM track
-WHERE albumid = 193
-ORDER BY trackid;
+  milliseconds * INTERVAL '1 ms' AS duration,
+  PG_SIZE_PRETTY(bytes)          AS bytes
+FROM
+  track
+WHERE
+  albumid = 193
+ORDER BY
+  trackid;

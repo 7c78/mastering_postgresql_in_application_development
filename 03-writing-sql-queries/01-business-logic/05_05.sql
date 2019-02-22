@@ -1,15 +1,18 @@
 WITH four_albums AS (
-  SELECT artistid
-  FROM album
-  GROUP BY artistid
-  HAVING count(*) = 4
+  SELECT
+    artistid
+  FROM
+    album
+  GROUP BY
+    artistid
+  HAVING
+    count(*) = 4
 )
 
 SELECT
   artist.name,
   album,
   duration
-
 FROM
   four_albums
 JOIN
@@ -17,5 +20,4 @@ JOIN
   LATERAL get_all_albums(artistid)
 ORDER BY
   artistid,
-  duration
-  DESC;
+  duration DESC;
