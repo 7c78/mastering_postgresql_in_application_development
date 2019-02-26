@@ -1,0 +1,3 @@
+DROP TABLE test;
+CREATE TABLE test(id SERIAL, f1 TEXT NOT NULL DEFAULT 'unknown');
+INSERT INTO test(f1) VALUES(DEFAULT),(NULL),('foo');

@@ -1,0 +1,5 @@
+SELECT
+  x,
+  ARRAY_AGG(x) OVER (ORDER BY x)
+FROM
+  GENERATE_SERIES(1, 3) AS t(x);
