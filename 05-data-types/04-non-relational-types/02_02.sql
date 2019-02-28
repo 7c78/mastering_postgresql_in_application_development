@@ -1,0 +1,1 @@
+TABLE rate LIMIT 10;

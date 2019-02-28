@@ -1,0 +1,1 @@
+ALTER TABLE js ALTER COLUMN extra TYPE jsonb;
