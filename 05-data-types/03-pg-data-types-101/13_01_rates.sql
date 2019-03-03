@@ -24,13 +24,13 @@ CREATE TABLE RATES(
 );
 
 INSERT INTO rates(currency, validity, rate)
-    SELECT
-      currency,
-      daterange(DATE, LEAD(DATE) OVER(PARTITION BY currency ORDER BY DATE), '[)') AS validity,
-      rate
-    FROM
-      raw.rates
-    ORDER BY
-      date;
+  SELECT
+    currency,
+    daterange(DATE, LEAD(DATE) OVER(PARTITION BY currency ORDER BY DATE), '[)') AS validity,
+    rate
+  FROM
+    raw.rates
+  ORDER BY
+    date;
 
-commit;
+COMMIT;

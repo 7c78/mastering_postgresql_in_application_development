@@ -16,10 +16,10 @@ INSERT INTO color(name)
 INSERT INTO cars(brand, model, color)
   SELECT brand, model, color.id
   FROM (
-        VALUES('ferari', 'testarosa', 'red'),
-              ('aston martin', 'db2', 'blue'),
-              ('bentley', 'mulsanne', 'gray'),
-              ('ford', 'T', 'black')
-       ) AS data(brand, model, color)
+    VALUES('ferari', 'testarosa', 'red'),
+          ('aston martin', 'db2', 'blue'),
+          ('bentley', 'mulsanne', 'gray'),
+          ('ford', 'T', 'black')
+  ) AS data(brand, model, color)
   JOIN
     color ON color.name = data.color;

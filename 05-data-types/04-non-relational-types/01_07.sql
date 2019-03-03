@@ -3,7 +3,7 @@ SELECT
   COUNT(*)
 FROM
   hashtag,
-  unnest(hashtags) AS t(tag)
+  UNNEST(hashtags) AS t(tag)
 GROUP BY
   tag
 ORDER BY

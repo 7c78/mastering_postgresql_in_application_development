@@ -4,7 +4,7 @@ WITH categories(id, categories) AS (
     REGEXP_SPLIT_TO_ARRAY(REGEXP_SPLIT_TO_TABLE(themes, ','), ' > ') AS categories
   FROM
     opendata.archives_planete
- )
+)
 
 SELECT
   categories[1] AS category,
