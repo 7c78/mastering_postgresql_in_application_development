@@ -1,0 +1,7 @@
+SELECT COUNT(*) FROM foo;
+
+BEGIN;
+truncate foo;
+ROLLBACK;
+
+SELECT COUNT(*) FROM foo;

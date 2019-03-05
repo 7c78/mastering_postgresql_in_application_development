@@ -1,0 +1,1 @@
+ALTER TABLE tweet.activity DROP CONSTRAINT activity_messageid_datetime_action_key;
